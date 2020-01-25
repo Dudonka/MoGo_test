@@ -143,7 +143,7 @@ hr{
     margin: 45px auto ;
 }
 
-.into_btn{
+.intro_btn{
     display: inline-block;
     vertical-align: top;
     border: 3px solid white;
@@ -209,6 +209,7 @@ hr{
 /* Section */
 .section{
     padding: 80px 0;
+    overflow: hidden;
 }
 
 .section--grey{
@@ -1368,6 +1369,10 @@ hr{
         font-size: 18px;
     }
 
+    .intro_title:after{
+        margin: 25px auto;
+    }
+
     /* Section*/
     .section{
         padding: 30px 0;
@@ -1409,6 +1414,12 @@ hr{
         margin-top: 5px;
     }
 
+    /*Services*/
+
+    .services_text{
+        font-size: 14px;
+    }
+
     /* Devices */
 
     .devices{
@@ -1417,8 +1428,8 @@ hr{
 
     .devices_item--iphone{
         width: 160px;
-        bottom: -50px;
-        right: -30px;
+        bottom: -80px;
+        right: -0px;
     }
 
     /* Reviews */
@@ -1488,5 +1499,19 @@ hr{
 
     .clients_item:last-child{
         margin-bottom: 0px;
+    }
+
+    /* Footer */
+
+    .footer_logo{
+        margin-bottom: 0;
+    }
+
+    .footer_blogs_title{
+        font-size: 11px;
+    }
+
+    .footer_blogs_date{
+        font-size: 12px;
     }
 }
