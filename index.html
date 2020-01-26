@@ -10,24 +10,28 @@
 </head>
 <body>
 
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
             <div class="header_inner">
                 <div class="header_logo">MoGo</div>
-                <nav class="header_nav">
-                    <a class="nav_link active" href="#">About</a>
-                    <a class="nav_link" href="#">Service</a>
-                    <a class="nav_link" href="#">Work</a>
-                    <a class="nav_link" href="#">Blog</a>
-                    <a class="nav_link" href="#">Contact</a>
+                <nav class="header_nav" id="nav">
+                    <a class="nav_link" href="#" data-scroll="#about">About</a>
+                    <a class="nav_link" href="#" data-scroll="#service">Service</a>
+                    <a class="nav_link" href="#" data-scroll="#works">Works</a>
+                    <a class="nav_link" href="#" data-scroll="#blog">Blog</a>
+                    <a class="nav_link" href="#" data-scroll="#footer">Contact</a>
                     <a class="nav_link" href="#"><img alt="" src="assets/img/search.png"/></a>
                     <a class="nav_link" href="#"><img alt="" src="assets/img/shop.png"/></a>
                 </nav>
+
+                <button class="nav_toggle" id="toggle_btn" type="button">
+                    <span class="toggle_item">Menu</span>
+                </button>
             </div>
         </div>
     </header>
 
-    <div class="intro">
+    <div class="intro" id="intro">
         <div class="container">
             <div class="intro_inner">
                 <h2 class="intro_suptitle">Creative Template</h2>
@@ -61,7 +65,7 @@
         </div>
     </div><!-- /.intro-->
 
-<section class="section">
+<section class="section" id="about">
     <div class="container">
 
         <div class="section_header">
@@ -133,7 +137,7 @@
     </div><!-- container-->
 </div><!-- statistics-->
 
-<section class="section">
+<section class="section" id="service">
     <div class="container">
 
         <div class="section_header">
@@ -423,7 +427,7 @@
     </div>
 </div>
 
-<section class="section">
+<section class="section" id="works">
     <div class="container">
         <div class="section_header">
             <h3 class="section_suptitle">What we do</h3>
@@ -574,7 +578,7 @@
     </div><!-- container-->
 </section>
 
-<section class="section">
+<section class="section" id="blog">
     <div class="container">
         <div class="section_header">
             <h3 class="section_suptitle">Our Stories</h3>
@@ -662,7 +666,7 @@
     </div>
 </section>
 
-<footer class="footer">
+<footer class="footer" id="footer">
     <div class="container">
         <div class="footer_inner">
 
@@ -748,6 +752,7 @@
     </div><!-- container-->
 </footer>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="assets/js/app.js"></script>
 </body>
 </html>

@@ -44,7 +44,24 @@ hr{
     left: 0;
     right: 0;
     z-index: 1000;
-    padding-top: 20px;
+    padding-top:20px;
+}
+
+.fixed{
+    background: linear-gradient(to right, #f38181, #7dffef);
+    position: fixed;
+    padding: 5px 0;
+    top: 0;
+    right: 0;
+    top:0;
+    left: 0;
+    right: 0;
+    transform: translate3d(0,0,0);
+    box-shadow: 0 4px 10px rgba(0, 0 , 0, 0.3);
+}
+
+.header.active{
+    background: #e78482;
 }
 
 .header_logo{
@@ -67,7 +84,7 @@ hr{
 .nav_link{
     display:inline-block;
     vertical-align: top;
-    margin: 0 10px;
+    margin: 0 15px;
     color: #fff;
     text-decoration: none;
     transition: color 0.1s linear;
@@ -100,6 +117,70 @@ hr{
     opacity: 1;
 }
 
+.nav_toggle{
+    padding: 10px 0;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1;
+    width: 30px;
+    font-size: 0;
+    color: transparent;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    display: none;
+}
+
+.toggle_item{
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    transition: background 0.2s linear;
+}
+
+.toggle_item::before,
+.toggle_item::after{
+    content: " ";
+    width: 100%;
+    height: 3px;
+    background: white;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    transition: transform 0.2s linear;
+}
+
+.toggle_item::before{
+    top: -8px;
+}
+
+.toggle_item::after{
+    bottom: -8px;
+}
+
+.nav_toggle.active .toggle_item{
+    background: none;
+}
+
+.nav_toggle.active .toggle_item::before{
+    top: 0;
+    transform: rotate(45deg);
+}
+
+
+.nav_toggle.active .toggle_item::after{
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
 /* Intro */
 .intro{
     display: flex;
@@ -109,6 +190,8 @@ hr{
     height: 100vh;
     background: url("../img/intro_back.png") center no-repeat;
     background-size: cover;
+    min-height: 820px;
+    position: relative;
 }
 
 .intro_inner{
@@ -117,6 +200,7 @@ hr{
     margin: 0 auto;
     text-align: center;
 }
+
 .intro_suptitle{
     font-size: 60px;
     color:#fff;
@@ -292,7 +376,6 @@ hr{
     transition: opacity .1s linear;
 }
 
-
 .card_text{
     opacity: 0;
     width: 100%;
@@ -385,7 +468,6 @@ hr{
     margin-bottom: 30px;
     padding: 0 35px 40px 70px;
     position: relative;
-
 }
 
 .services_item--border{
@@ -439,7 +521,6 @@ hr{
     bottom: -90px;
     right: 0;
     z-index: 1;
-
 }
 
 /* We do service */
@@ -1201,11 +1282,61 @@ hr{
 }
 
 @media (max-width: 770px){
+
     /* Header*/
-    .header_nav{
-        display: none;
+    .header{
+        padding: 10px 0;
     }
+
+    .fixed{
+        padding: 5px 0;
+    }
+
+    /*Nav*/
+    .header_nav{
+        border-top: rgba(255, 255, 255, 0.29) solid 1px;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #e78482;
+        width: 100%;
+    }
+
+    .header_nav.active{
+        display: block;
+    }
+
+
+
+    .nav_link{
+        display: block;
+        margin: 0;
+        padding: 10px 20px;
+    }
+
+    .nav_toggle{
+        display: block;
+    }
+
+
+    /* Intro */
+
+    .intro{
+        min-height: 650px;
+    }
+
+    .intro_title{
+        font-size: 40px;
+    }
+
+    .intro_suptitle{
+        font-size: 22px;
+    }
+
+
     /*Slider*/
+
     .slider_text{
         display: none;
     }
@@ -1214,6 +1345,7 @@ hr{
         width: 50%;
     }
     /* Section */
+
     .section{
         padding: 40px 0;
     }
@@ -1240,6 +1372,7 @@ hr{
     }
 
     /* Services*/
+
     .services{
         justify-content: center;
     }
@@ -1256,6 +1389,7 @@ hr{
     }
 
     /* WeDo*/
+
     .wedo_item img{
         display: none;
     }
@@ -1361,6 +1495,7 @@ hr{
 @media (max-width: 575px){
 
     /* Intro */
+
     .intro_title{
         font-size: 40px;
     }
